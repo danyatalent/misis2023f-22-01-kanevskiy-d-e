@@ -20,7 +20,6 @@ int main(int argc, char* argv[])
 	glutKeyboardFunc(&keyboard);
 	glutMotionFunc(&mouseDrag);
 	glutMouseFunc(&mouseClick);
-	//glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS); // so can do processing when window is closed
 
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	glewInit();

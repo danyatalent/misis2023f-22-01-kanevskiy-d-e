@@ -41,7 +41,6 @@ TransformationManager::~TransformationManager(void)
 {
 }
 
-// Only call after initialising OpenGL
 void TransformationManager::Rotate(float fx_i, float fy_i, float fz_i)
 {
 	mfRot[0] = fx_i;
@@ -58,7 +57,6 @@ void TransformationManager::Rotate(float fx_i, float fy_i, float fz_i)
 	glLoadIdentity();
 }
 
-// Only call after initialising OpenGL
 void TransformationManager::ResetRotation()
 {
 	mdRotation[0] = mdRotation[5] = mdRotation[10] = mdRotation[15] = 1.0f;
@@ -69,6 +67,7 @@ void TransformationManager::ResetRotation()
 
 
 TransformationManager transManager;
+
 /*
 Render image for display
 */
@@ -97,8 +96,6 @@ void render()
 	// (Usually the number of slices will be less so if this is not - 
 	// normalized then the z axis will look bulky)
 	// Flipping of the y axis is done by giving a negative value in y axis.
-	// This can be achieved either by changing the y co ordinates in -
-	// texture mapping or by negative scaling of y axis
 
 	glScaled((float)IMAGEWIDTH / (float)IMAGEWIDTH,
 		1.0f * (float)IMAGEWIDTH / (float)(float)IMAGEHEIGHT,
@@ -189,10 +186,6 @@ bool initTexturesRaw(std::string filename)
 	int count = 0;
 
 	// Convert the data to RGBA data.
-	// Here we are simply putting the same value to R, G, B and A channels.
-	// This can be changed depending on the source data
-	// Usually for raw data, the alpha value will
-	// be constructed by a threshold value given by the user 
 	for (int nIndx = 0; nIndx < IMAGEWIDTH * IMAGEHEIGHT * IMAGECOUNT; ++nIndx)
 	{
 		chRGBABuffer[nIndx * 4] = chBuffer[nIndx];
@@ -277,50 +270,14 @@ void mouseClick(int button, int state, int x, int y)
 /*
 Map 3D texture for display during rendering
 */
-void map3DTexture(float textureIndex, int option)
+void map3DTexture(float textureIndex)
 {
-	if (option == 0)
-	{
-		glTexCoord3f(0.0f, 0.0f, ((float)textureIndex + 1.0f) / 2.0f);
-		glVertex3f(-dViewPortSize, -dViewPortSize, textureIndex);  // bottom left corner + z index
-		glTexCoord3f(1.0f, 0.0f, ((float)textureIndex + 1.0f) / 2.0f);
-		glVertex3f(dViewPortSize, -dViewPortSize, textureIndex); // top left corner + z index
-		glTexCoord3f(1.0f, 1.0f, ((float)textureIndex + 1.0f) / 2.0f);
-		glVertex3f(dViewPortSize, dViewPortSize, textureIndex);  // top right corner + z index
-		glTexCoord3f(0.0f, 1.0f, ((float)textureIndex + 1.0f) / 2.0f);
-		glVertex3f(-dViewPortSize, dViewPortSize, textureIndex); // bottom right corner + z index
-	}
-	else if (option == 2)
-	{
-		glTexCoord3f(0.0f, 0.0f, ((float)textureIndex + 1.0f) / 2.0f);
-		glVertex3f(textureIndex, -dViewPortSize, -dViewPortSize);  // bottom left corner + z index
-		glTexCoord3f(1.0f, 0.0f, ((float)textureIndex + 1.0f) / 2.0f);
-		glVertex3f(textureIndex, -dViewPortSize, dViewPortSize); // top left corner + z index
-		glTexCoord3f(1.0f, 1.0f, ((float)textureIndex + 1.0f) / 2.0f);
-		glVertex3f(textureIndex, dViewPortSize, dViewPortSize);  // top right corner + z index
-		glTexCoord3f(0.0f, 1.0f, ((float)textureIndex + 1.0f) / 2.0f);
-		glVertex3f(textureIndex, dViewPortSize, -dViewPortSize); // bottom right corner + z index
-	}
+	glTexCoord3f(0.0f, 0.0f, ((float)textureIndex + 1.0f) / 2.0f);
+	glVertex3f(-dViewPortSize, -dViewPortSize, textureIndex);  // bottom left corner + z index
+	glTexCoord3f(1.0f, 0.0f, ((float)textureIndex + 1.0f) / 2.0f);
+	glVertex3f(dViewPortSize, -dViewPortSize, textureIndex); // top left corner + z index
+	glTexCoord3f(1.0f, 1.0f, ((float)textureIndex + 1.0f) / 2.0f);
+	glVertex3f(dViewPortSize, dViewPortSize, textureIndex);  // top right corner + z index
+	glTexCoord3f(0.0f, 1.0f, ((float)textureIndex + 1.0f) / 2.0f);
+	glVertex3f(-dViewPortSize, dViewPortSize, textureIndex); // bottom right corner + z index
 }
-
-//VolumeRender::VolumeRender(int img_w, int img_h, int img_c)
-//{
-//	IMAGEWIDTH = img_w;
-//	IMAGEHEIGHT = img_h;
-//	IMAGECOUNT = img_c;
-//}
-//
-//int VolumeRender::getWidth()
-//{
-//	return this->IMAGEWIDTH;
-//}
-//
-//int VolumeRender::getHeight()
-//{
-//	return this->IMAGEHEIGHT;
-//}
-//
-//int VolumeRender::getCount()
-//{
-//	return this->IMAGECOUNT;
-//}
