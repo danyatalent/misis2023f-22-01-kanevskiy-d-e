@@ -105,8 +105,8 @@ public:
 	void ResetRotation();
 
 private:
-	float mfRot[3];
-	double mdRotation[16];
+	float mfRot[3]; /*mfRot - массив для осей*/
+	double mdRotation[16] /*mdRotation - массив для ротации*/;
 };
 
 #endif
