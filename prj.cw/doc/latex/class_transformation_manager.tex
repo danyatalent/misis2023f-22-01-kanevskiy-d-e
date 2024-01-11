@@ -1,0 +1,71 @@
+\doxysection{Класс Transformation\+Manager}
+\hypertarget{class_transformation_manager}{}\label{class_transformation_manager}\index{TransformationManager@{TransformationManager}}
+
+
+Вспомогательный класс для корректного отображения объекта во время вращения  
+
+
+
+
+{\ttfamily \#include $<$volren.\+hpp$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_transformation_manager_a0dee0f5be8202cdf9e5c6c6b684403cd}\label{class_transformation_manager_a0dee0f5be8202cdf9e5c6c6b684403cd} 
+{\bfseries Transformation\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Конструктор класса \end{DoxyCompactList}\item 
+\Hypertarget{class_transformation_manager_a024261f515e858f6a0e2ca4a2d42b8c2}\label{class_transformation_manager_a024261f515e858f6a0e2ca4a2d42b8c2} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Transformation\+Manager} ()=default
+\begin{DoxyCompactList}\small\item\em Деструктор класса \end{DoxyCompactList}\item 
+const double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_transformation_manager_a5675f0815e36fd018c013160d0fb8ff6}{Get\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Метод-\/геттер \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformation_manager_ad9536c015fca69e7dffaea607d5aa620}{Rotate}} (float fx\+\_\+i, float fy\+\_\+i, float fz\+\_\+i)
+\begin{DoxyCompactList}\small\item\em Метод, реализующий вращение изображения \end{DoxyCompactList}\item 
+\Hypertarget{class_transformation_manager_a0e792fa832f4580d23589b985875e05d}\label{class_transformation_manager_a0e792fa832f4580d23589b985875e05d} 
+void {\bfseries Reset\+Rotation} ()
+\begin{DoxyCompactList}\small\item\em Метод, восстанавливающий изначальный вид матрицы \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Вспомогательный класс для корректного отображения объекта во время вращения 
+
+\doxysubsection{Методы}
+\Hypertarget{class_transformation_manager_a5675f0815e36fd018c013160d0fb8ff6}\label{class_transformation_manager_a5675f0815e36fd018c013160d0fb8ff6} 
+\index{TransformationManager@{TransformationManager}!GetMatrix@{GetMatrix}}
+\index{GetMatrix@{GetMatrix}!TransformationManager@{TransformationManager}}
+\doxysubsubsection{\texorpdfstring{GetMatrix()}{GetMatrix()}}
+{\footnotesize\ttfamily const double \texorpdfstring{$\ast$}{*} Transformation\+Manager\+::\+Get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Метод-\/геттер 
+
+\begin{DoxyReturn}{Возвращает}
+md\+Rotation -\/ текущее состояние матрицы 
+\end{DoxyReturn}
+\Hypertarget{class_transformation_manager_ad9536c015fca69e7dffaea607d5aa620}\label{class_transformation_manager_ad9536c015fca69e7dffaea607d5aa620} 
+\index{TransformationManager@{TransformationManager}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!TransformationManager@{TransformationManager}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily void Transformation\+Manager\+::\+Rotate (\begin{DoxyParamCaption}\item[{float}]{fx\+\_\+i,  }\item[{float}]{fy\+\_\+i,  }\item[{float}]{fz\+\_\+i }\end{DoxyParamCaption})}
+
+
+
+Метод, реализующий вращение изображения 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em fx\+\_\+i} & -\/ i-\/ая координата по x \\
+\hline
+{\em fy\+\_\+i} & -\/ i-\/ая координата по y \\
+\hline
+{\em fz\+\_\+i} & -\/ i-\/ая координата по z \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+volren/include/volren/\mbox{\hyperlink{volren_8hpp}{volren.\+hpp}}\item 
+volren/volren.\+cpp\end{DoxyCompactItemize}

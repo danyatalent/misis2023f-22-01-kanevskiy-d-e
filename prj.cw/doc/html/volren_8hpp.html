@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Volume Renderer: Файл volren/include/volren/volren.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Volume Renderer<span id="projectnumber">&#160;1.1</span>
+   </div>
+   <div id="projectbrief">Библиотека для 3D визуализации КТ-сканов</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fc386f126b49c0d1b6d325450a6ff83.html">volren</a></li><li class="navelem"><a class="el" href="dir_c76339699a038828a9df7f95bf4c6ff1.html">include</a></li><li class="navelem"><a class="el" href="dir_1056c373aaff6b16b939413fa3f37542.html">volren</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Файл volren.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;GL/freeglut.h&gt;</code><br />
+</div>
+<p><a href="volren_8hpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transformation_manager.html">TransformationManager</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вспомогательный класс для корректного отображения объекта во время вращения  <a href="class_transformation_manager.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a7d9edd8b0a8d0d2f737eb5ee0b0a5040" id="r_a7d9edd8b0a8d0d2f737eb5ee0b0a5040"><td class="memItemLeft" align="right" valign="top"><a id="a7d9edd8b0a8d0d2f737eb5ee0b0a5040" name="a7d9edd8b0a8d0d2f737eb5ee0b0a5040"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> ()</td></tr>
+<tr class="memdesc:a7d9edd8b0a8d0d2f737eb5ee0b0a5040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback функция рендера для glutDisplayFunc. <br /></td></tr>
+<tr class="separator:a7d9edd8b0a8d0d2f737eb5ee0b0a5040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56bfa8fae91947eb5802d2e208405904" id="r_a56bfa8fae91947eb5802d2e208405904"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56bfa8fae91947eb5802d2e208405904">resize</a> (int width, int height)</td></tr>
+<tr class="memdesc:a56bfa8fae91947eb5802d2e208405904"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback функция изменения размера для glutReshapeFunc.  <br /></td></tr>
+<tr class="separator:a56bfa8fae91947eb5802d2e208405904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef7ba2f69afb2d954545f64c7fe24b14" id="r_aef7ba2f69afb2d954545f64c7fe24b14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef7ba2f69afb2d954545f64c7fe24b14">keyboard</a> (unsigned char key, int x, int y)</td></tr>
+<tr class="memdesc:aef7ba2f69afb2d954545f64c7fe24b14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback функция обработки ввода с клавиатуры для glutKeyboardFunc.  <br /></td></tr>
+<tr class="separator:aef7ba2f69afb2d954545f64c7fe24b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a125707cf235695f4eb006113f0c01265" id="r_a125707cf235695f4eb006113f0c01265"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a125707cf235695f4eb006113f0c01265">mouseClick</a> (int button, int state, int x, int y)</td></tr>
+<tr class="memdesc:a125707cf235695f4eb006113f0c01265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback функция для обработки мыши для glutMouseFunc.  <br /></td></tr>
+<tr class="separator:a125707cf235695f4eb006113f0c01265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75be5929b9c52f6dc2f5ccc1cd66e26c" id="r_a75be5929b9c52f6dc2f5ccc1cd66e26c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75be5929b9c52f6dc2f5ccc1cd66e26c">mouseDrag</a> (int x, int y)</td></tr>
+<tr class="memdesc:a75be5929b9c52f6dc2f5ccc1cd66e26c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback функция для изменения камеры с помощью мыши для glutMotionFunc.  <br /></td></tr>
+<tr class="separator:a75be5929b9c52f6dc2f5ccc1cd66e26c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5108488a665455559688713783ce32a6" id="r_a5108488a665455559688713783ce32a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5108488a665455559688713783ce32a6">initTexturesRaw</a> (std::string filename)</td></tr>
+<tr class="memdesc:a5108488a665455559688713783ce32a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Считывание и создание 3d текстуры из raw файла  <br /></td></tr>
+<tr class="separator:a5108488a665455559688713783ce32a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a550eff5c53bff0235c58c00e138c1" id="r_af7a550eff5c53bff0235c58c00e138c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7a550eff5c53bff0235c58c00e138c1">map3DTexture</a> (float textureIndex)</td></tr>
+<tr class="memdesc:af7a550eff5c53bff0235c58c00e138c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">отображение 3d текстуры для рендеринга, используется в функции <a class="el" href="#a7d9edd8b0a8d0d2f737eb5ee0b0a5040" title="Callback функция рендера для glutDisplayFunc.">render()</a>  <br /></td></tr>
+<tr class="separator:af7a550eff5c53bff0235c58c00e138c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Интерфейс библиотеки для Volume Rendering </p>
+</div><h2 class="groupheader">Функции</h2>
+<a id="a5108488a665455559688713783ce32a6" name="a5108488a665455559688713783ce32a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5108488a665455559688713783ce32a6">&#9670;&#160;</a></span>initTexturesRaw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool initTexturesRaw </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Считывание и создание 3d текстуры из raw файла </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>- относительный путь к файлу </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>status - статус считывания файла </dd></dl>
+
+</div>
+</div>
+<a id="aef7ba2f69afb2d954545f64c7fe24b14" name="aef7ba2f69afb2d954545f64c7fe24b14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef7ba2f69afb2d954545f64c7fe24b14">&#9670;&#160;</a></span>keyboard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void keyboard </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char</td>          <td class="paramname"><span class="paramname"><em>key</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback функция обработки ввода с клавиатуры для glutKeyboardFunc. </p>
+<p>Позволяет управлять камерой с помощью клавиш W-A-S-D, а также возвращать камеру в изначальное положение с помощью backspace</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>- нажатая клавиша </td></tr>
+    <tr><td class="paramname">x</td><td>- координата x положения мыши во время нажатия на клавишу </td></tr>
+    <tr><td class="paramname">y</td><td>- координата y положения мыши во время нажатия на клавишу </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af7a550eff5c53bff0235c58c00e138c1" name="af7a550eff5c53bff0235c58c00e138c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7a550eff5c53bff0235c58c00e138c1">&#9670;&#160;</a></span>map3DTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void map3DTexture </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>textureIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>отображение 3d текстуры для рендеринга, используется в функции <a class="el" href="#a7d9edd8b0a8d0d2f737eb5ee0b0a5040" title="Callback функция рендера для glutDisplayFunc.">render()</a> </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textureIndex</td><td>- индекс текущей текстуры </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a125707cf235695f4eb006113f0c01265" name="a125707cf235695f4eb006113f0c01265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a125707cf235695f4eb006113f0c01265">&#9670;&#160;</a></span>mouseClick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mouseClick </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>button</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>state</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback функция для обработки мыши для glutMouseFunc. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">button</td><td>- нажатая клавиша мыши </td></tr>
+    <tr><td class="paramname">state</td><td>- статус клавиши мыши(GLUT_UP или GLUT_DOWN) </td></tr>
+    <tr><td class="paramname">x</td><td>- координата x положения мыши во время нажатия </td></tr>
+    <tr><td class="paramname">y</td><td>- координата y положения мыши во время нажатия </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a75be5929b9c52f6dc2f5ccc1cd66e26c" name="a75be5929b9c52f6dc2f5ccc1cd66e26c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75be5929b9c52f6dc2f5ccc1cd66e26c">&#9670;&#160;</a></span>mouseDrag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mouseDrag </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback функция для изменения камеры с помощью мыши для glutMotionFunc. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>- координата x положения мыши во время нажатия </td></tr>
+    <tr><td class="paramname">y</td><td>- координата y положения мыши во время нажатия </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a56bfa8fae91947eb5802d2e208405904" name="a56bfa8fae91947eb5802d2e208405904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56bfa8fae91947eb5802d2e208405904">&#9670;&#160;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resize </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback функция изменения размера для glutReshapeFunc. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>- ширина слоя </td></tr>
+    <tr><td class="paramname">height</td><td>- высота слоя </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>
