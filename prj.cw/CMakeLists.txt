@@ -49,3 +49,6 @@ endif()
 
 add_subdirectory(volren)
 add_subdirectory(test_app)
+
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/data
+DESTINATION .)

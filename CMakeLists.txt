@@ -1,4 +1,4 @@
-﻿cmake_minimum_required (VERSION 3.14)
+cmake_minimum_required (VERSION 3.14)
 project (misis2023f-22-01-kanevskiy-d-e)
 
 set(CMAKE_VERBOSE_MAKEFILE True)
@@ -10,3 +10,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_CURRENT_SOURCE_DIR}/bin.rel)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELWITHDEBINFO ${CMAKE_CURRENT_SOURCE_DIR}/bin.relwithdbg)
 add_subdirectory(prj.codeforces)
 add_subdirectory(prj.cw)
+
+install(DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE}/
+		DESTINATION bin FILES_MATCHING PATTERN "*test*" EXCLUDE 
+		PATTERN "*" )

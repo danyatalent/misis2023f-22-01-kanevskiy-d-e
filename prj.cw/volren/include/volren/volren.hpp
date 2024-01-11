@@ -27,8 +27,8 @@ void resize(int width, int height);
 /**
 * @brief Callback функция обработки ввода с клавиатуры для glutKeyboardFunc
 * 
-* Позволяет управлять камерой с помощью клавиш W-A-S-D
-* А также возвращать камеру в изначальное положение с помощью backspace
+* Позволяет управлять камерой с помощью клавиш W-A-S-D,
+* а также возвращать камеру в изначальное положение с помощью backspace
 * 
 * @param key - нажатая клавиша
 * @param x - координата x положения мыши во время нажатия на клавишу
@@ -60,7 +60,7 @@ void mouseDrag(int x, int y);
 bool initTexturesRaw(std::string filename);
 
 /**
-* @brief отображение 3d текстуры для рендеринга
+* @brief отображение 3d текстуры для рендеринга, используется в функции render()
 * @param textureIndex - индекс текущей текстуры
 */
 void map3DTexture(float textureIndex);
@@ -75,12 +75,12 @@ public:
 	/**
 	* @brief Конструктор класса
 	*/
-	TransformationManager(void);
+	TransformationManager();
 
 	/**
 	* @brief Деструктор класса
 	*/
-	virtual ~TransformationManager(void);
+	virtual ~TransformationManager() = default;
 
 	/**
 	* @brief Метод-геттер

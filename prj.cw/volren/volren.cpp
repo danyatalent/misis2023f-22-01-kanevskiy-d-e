@@ -26,7 +26,7 @@ int mouseX;
 int mouseY;
 int textureID3D;
 
-TransformationManager::TransformationManager(void)
+TransformationManager::TransformationManager()
 {
 	mdRotation[0] = mdRotation[5] = mdRotation[10] = mdRotation[15] = 1.0f;
 	mdRotation[1] = mdRotation[2] = mdRotation[3] = mdRotation[4] = 0.0f;
@@ -37,9 +37,6 @@ TransformationManager::TransformationManager(void)
 }
 
 
-TransformationManager::~TransformationManager(void)
-{
-}
 
 void TransformationManager::Rotate(float fx_i, float fy_i, float fz_i)
 {
@@ -87,21 +84,14 @@ void render()
 	glMatrixMode(GL_TEXTURE);
 	glLoadIdentity();
 
-	// Translate and make 0.5f as the center 
-	// (texture co ordinate is from 0 to 1.
-	// so center of rotation has to be 0.5f)
+	// Установка центра вращения 0.5f
 	glTranslatef(0.5f, 0.5f, 0.5f);
-
-	// A scaling applied to normalize the axis 
-	// (Usually the number of slices will be less so if this is not - 
-	// normalized then the z axis will look bulky)
-	// Flipping of the y axis is done by giving a negative value in y axis.
 
 	glScaled((float)IMAGEWIDTH / (float)IMAGEWIDTH,
 		1.0f * (float)IMAGEWIDTH / (float)(float)IMAGEHEIGHT,
 		(float)IMAGEWIDTH / (float)IMAGECOUNT);
 
-	// Apply the user provided transformations
+	// Применение предоставленных пользователем преобразований
 	glMultMatrixd(transManager.GetMatrix());
 
 	glTranslatef(-0.5f, -0.5f, -0.5f);
@@ -122,9 +112,7 @@ void render()
 
 }
 
-/*
-Resizes the viewer window whilst maintaining the aspect ratio
-*/
+
 void resize(int width, int height)
 {
 	GLdouble aspectRatio = (GLdouble)(width) / (GLdouble)(height);
@@ -147,9 +135,6 @@ void resize(int width, int height)
 	glLoadIdentity();
 }
 
-/*
-Create 3D textures from images. All images are in one raw data file
-*/
 bool initTexturesRaw(std::string filename)
 {
 
@@ -165,17 +150,16 @@ bool initTexturesRaw(std::string filename)
 		return false;
 	}
 
-	// Holds the luminance buffer
 	char* chRGBABuffer = new char[IMAGEWIDTH * IMAGEHEIGHT * IMAGECOUNT * 4];
 	char* chBuffer = new char[IMAGEHEIGHT * IMAGEWIDTH * IMAGECOUNT];
 
-	//Only create 1 3D texture now
+	// Создание 1 текстуры
 	glGenTextures(1, (GLuint*)&textureID3D);
 
-	// Read each frames and construct the texture
+	// Считывание слоев и создание текстур
 	fread(chBuffer, sizeof(unsigned char), IMAGEHEIGHT * IMAGEWIDTH * IMAGECOUNT, file);
 
-	// Set the properties of the texture.
+	// Установка параметров для текстуры
 	glBindTexture(GL_TEXTURE_3D, textureID3D);
 	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
 	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
@@ -185,7 +169,6 @@ bool initTexturesRaw(std::string filename)
 	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	int count = 0;
 
-	// Convert the data to RGBA data.
 	for (int nIndx = 0; nIndx < IMAGEWIDTH * IMAGEHEIGHT * IMAGECOUNT; ++nIndx)
 	{
 		chRGBABuffer[nIndx * 4] = chBuffer[nIndx];
@@ -216,9 +199,6 @@ bool initTexturesRaw(std::string filename)
 }
 
 
-/*
-Keyboard callback. Rotates image with W-A-S-D and resets with "backspace" (This can be changed)
-*/
 void keyboard(unsigned char key, int x, int y)
 {
 	if (key == 'w' || key == 'W') {
@@ -244,9 +224,7 @@ void keyboard(unsigned char key, int x, int y)
 	}
 }
 
-/*
-Mouse callback. Used to rotate via mouse
-*/
+
 void mouseDrag(int x, int y)
 {
 	if (((x - mouseX) != 0) || ((y - mouseY) != 0))
@@ -258,26 +236,22 @@ void mouseDrag(int x, int y)
 	}
 }
 
-/*
-Mouse callback occurs when mouse is clicked
-*/
+
 void mouseClick(int button, int state, int x, int y)
 {
 	mouseX = x;
 	mouseY = y;
 }
 
-/*
-Map 3D texture for display during rendering
-*/
+
 void map3DTexture(float textureIndex)
 {
 	glTexCoord3f(0.0f, 0.0f, ((float)textureIndex + 1.0f) / 2.0f);
-	glVertex3f(-dViewPortSize, -dViewPortSize, textureIndex);  // bottom left corner + z index
+	glVertex3f(-dViewPortSize, -dViewPortSize, textureIndex);  
 	glTexCoord3f(1.0f, 0.0f, ((float)textureIndex + 1.0f) / 2.0f);
-	glVertex3f(dViewPortSize, -dViewPortSize, textureIndex); // top left corner + z index
+	glVertex3f(dViewPortSize, -dViewPortSize, textureIndex); 
 	glTexCoord3f(1.0f, 1.0f, ((float)textureIndex + 1.0f) / 2.0f);
-	glVertex3f(dViewPortSize, dViewPortSize, textureIndex);  // top right corner + z index
+	glVertex3f(dViewPortSize, dViewPortSize, textureIndex);  
 	glTexCoord3f(0.0f, 1.0f, ((float)textureIndex + 1.0f) / 2.0f);
-	glVertex3f(-dViewPortSize, dViewPortSize, textureIndex); // bottom right corner + z index
+	glVertex3f(-dViewPortSize, dViewPortSize, textureIndex); 
 }
