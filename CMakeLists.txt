@@ -16,3 +16,8 @@ add_custom_target(install_${PROJECT_NAME}
         ${CMAKE_COMMAND} -DCMAKE_INSTALL_CONFIG_NAME=${CMAKE_BUILD_TYPE}
         -P cmake_install.cmake
         )
+	
+install(DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE}/
+        DESTINATION bin/
+        FILES_MATCHING 
+        PATTERN "*.dll")		
