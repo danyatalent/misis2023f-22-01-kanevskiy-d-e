@@ -16,7 +16,7 @@
 ## Инструкция по сборке
 ```bash
 git clone https://github.com/danyatalent/misis2023f-22-01-kanevskiy-d-e.git
-cmake --toolchain /home/danya/submodules/vcpkg/scripts/buildsystems/vcpkg.cmake -S . -B build
+cmake --toolchain <path-to-vcpkg>/scripts/buildsystems/vcpkg.cmake -S . -B build
 cmake --build build --config Release
 cmake --install ./build/ --config release --prefix cmd/
 ```

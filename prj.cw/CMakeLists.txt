@@ -26,7 +26,7 @@ if(DOXYGEN_FOUND)
 endif()
 
 if(DOXYGEN_FOUND)
-    install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/prj.cw/documentation
+    install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/doc
     DESTINATION .)
 endif()
 
