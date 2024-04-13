@@ -21,17 +21,17 @@ int main(int argc, char* argv[])
 	glutCreateWindow("volren");
 	glutPositionWindow(256, 256);
 
-	glutDisplayFunc(&render);
-	glutReshapeFunc(&resize);
-	glutKeyboardFunc(&keyboard);
-	glutMotionFunc(&mouseDrag);
-	glutMouseFunc(&mouseClick);
+	glutDisplayFunc(&volRen::render);
+	glutReshapeFunc(&volRen::resize);
+	glutKeyboardFunc(&volRen::keyboard);
+	glutMotionFunc(&volRen::mouseDrag);
+	glutMouseFunc(&volRen::mouseClick);
 
 	//glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	glewInit();
 
 	bool loadSuccess = false;
-	loadSuccess = initTexturesRaw(path);
+	loadSuccess = volRen::initTexturesRaw(path);
 
 	if (!loadSuccess)
 	{

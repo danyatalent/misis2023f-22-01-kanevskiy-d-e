@@ -68,7 +68,7 @@ TransformationManager transManager;
 /*
 Render image for display
 */
-void render()
+void volRen::render()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -113,7 +113,7 @@ void render()
 }
 
 
-void resize(int width, int height)
+void volRen::resize(int width, int height)
 {
 	GLdouble aspectRatio = (GLdouble)(width) / (GLdouble)(height);
 	glViewport(0, 0, width, height);
@@ -135,7 +135,7 @@ void resize(int width, int height)
 	glLoadIdentity();
 }
 
-bool initTexturesRaw(std::string filename)
+bool volRen::initTexturesRaw(std::string filename)
 {
 
 	float factor = 1.0f;
@@ -199,7 +199,7 @@ bool initTexturesRaw(std::string filename)
 }
 
 
-void keyboard(unsigned char key, int x, int y)
+void volRen::keyboard(unsigned char key, int x, int y)
 {
 	if (key == 'w' || key == 'W') {
 		transManager.Rotate(1.0f, 0, 0);
@@ -225,7 +225,7 @@ void keyboard(unsigned char key, int x, int y)
 }
 
 
-void mouseDrag(int x, int y)
+void volRen::mouseDrag(int x, int y)
 {
 	if (((x - mouseX) != 0) || ((y - mouseY) != 0))
 	{
@@ -237,14 +237,14 @@ void mouseDrag(int x, int y)
 }
 
 
-void mouseClick(int button, int state, int x, int y)
+void volRen::mouseClick(int button, int state, int x, int y)
 {
 	mouseX = x;
 	mouseY = y;
 }
 
 
-void map3DTexture(float textureIndex)
+void volRen::map3DTexture(float textureIndex)
 {
 	glTexCoord3f(0.0f, 0.0f, ((float)textureIndex + 1.0f) / 2.0f);
 	glVertex3f(-dViewPortSize, -dViewPortSize, textureIndex);  
