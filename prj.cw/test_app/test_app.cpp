@@ -8,7 +8,8 @@ int main(int argc, char* argv[])
 {
 	std::string path;
 	if (argc < 2) {
-		path = "../prj.cw/data/engine256x256x128.raw";
+		fprintf(stderr, "Failed to initialise textures\nCheck DATAFILE path");
+		return 1;
 	}
 	else {
 		path = argv[1];

@@ -11,6 +11,13 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELWITHDEBINFO ${CMAKE_CURRENT_SOURCE_DIR}/bi
 add_subdirectory(prj.codeforces)
 add_subdirectory(prj.cw)
 
+
+add_custom_target(install_${PROJECT_NAME}
+        ${CMAKE_COMMAND} -DCMAKE_INSTALL_CONFIG_NAME=${CMAKE_BUILD_TYPE}
+        -P cmake_install.cmake
+        )
+	
 install(DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE}/
-		DESTINATION bin FILES_MATCHING PATTERN "*test*" EXCLUDE 
-		PATTERN "*" )
+        DESTINATION bin/
+        FILES_MATCHING 
+        PATTERN "*.dll")		

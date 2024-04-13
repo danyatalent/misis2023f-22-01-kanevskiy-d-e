@@ -13,6 +13,19 @@
 * обработка raw файлов размером 256x256x128
 * 3D визуализация, возможность изменять положение камеры мышкой и W-A-S-D, а также сбрасывать положение камеры кнопкой BACKSPACE
 
+## Инструкция по сборке
+```bash
+git clone https://github.com/danyatalent/misis2023f-22-01-kanevskiy-d-e.git
+cmake --toolchain <path-to-vcpkg>/scripts/buildsystems/vcpkg.cmake -S . -B build
+cmake --build build --config Release
+cmake --install ./build/ --config release --prefix cmd/
+```
+
+Затем
+```bash
+cd cmd/bin && ./test_app data/engine256x256x128.raw
+```
+
 ## Результат работы
 ![example](test_example.gif)
 
