@@ -66,6 +66,14 @@ namespace volRen {
 	* @param textureIndex - индекс текущей текстуры
 	*/
 	void map3DTexture(float textureIndex);
+	
+	/**
+	* @brief Установка пользовательских размеров
+	* @param width - ширина
+	* @pararm height - высота
+	* @param count - кол-во слоев
+	*/
+	void setSize(int width, int height, int count);
 
 }
 /**

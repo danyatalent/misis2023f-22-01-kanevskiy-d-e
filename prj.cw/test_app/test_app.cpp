@@ -8,12 +8,13 @@ int main(int argc, char* argv[])
 {
 	std::string path;
 	if (argc < 2) {
-		fprintf(stderr, "Failed to initialise textures\nCheck DATAFILE path");
+		fprintf(stdout, "Failed to initialise textures\nCheck DATAFILE path");
 		return 1;
 	}
 	else {
 		path = argv[1];
 	}
+
 	
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH);
@@ -21,6 +22,9 @@ int main(int argc, char* argv[])
 
 	glutCreateWindow("volren");
 	glutPositionWindow(256, 256);
+
+	volRen::setSize(atoi(argv[2]), atoi(argv[3]), atoi(argv[3]));
+	
 
 	glutDisplayFunc(&volRen::render);
 	glutReshapeFunc(&volRen::resize);

@@ -70,6 +70,7 @@ Render image for display
 */
 void volRen::render()
 {
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glEnable(GL_BLEND);
@@ -103,7 +104,7 @@ void volRen::render()
 	for (float fIndx = -1.0f; fIndx <= 1.0f; fIndx += 0.006f)
 	{
 		glBegin(GL_QUADS);
-		map3DTexture(fIndx);
+		volRen::map3DTexture(fIndx);
 		glEnd();
 	}
 
@@ -254,4 +255,10 @@ void volRen::map3DTexture(float textureIndex)
 	glVertex3f(dViewPortSize, dViewPortSize, textureIndex);  
 	glTexCoord3f(0.0f, 1.0f, ((float)textureIndex + 1.0f) / 2.0f);
 	glVertex3f(-dViewPortSize, dViewPortSize, textureIndex); 
+}
+
+void volRen::setSize(int width, int height, int count) {
+	IMAGECOUNT = count;
+	IMAGEHEIGHT = height;
+	IMAGEWIDTH = width;
 }
